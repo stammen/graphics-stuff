@@ -53,6 +53,8 @@ if(NOT MSVC)
   endif()
   set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -ffast-math") # extend release-profile with fast-math
   set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -Wall") # extend debug-profile with -Wall
+else()
+  add_definitions(-D_CRT_SECURE_NO_WARNINGS)
 endif()
 
 add_subdirectory(src)

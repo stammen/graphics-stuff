@@ -105,6 +105,10 @@ set(PROJECT_VERSION ${VERSION_MAJOR}.${VERSION_MINOR}.${VERSION_PATCH})
 # Compiler definitions for building the library
 add_definitions(-DFT2_BUILD_LIBRARY)
 
+if(MSVC)
+  add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+endif()
+
 # Specify library include directories
 include_directories("${PROJECT_SOURCE_DIR}/include")
 
